@@ -1,4 +1,4 @@
-from fastmcp.server import FastMCP
+from mcp.server.fastmcp  import FastMCP
 
 from sql_graph.common import web_search_tool
 from sql_graph.tools_node import db
@@ -35,6 +35,5 @@ def db_query_tool(query: str) -> str:
         return '错误:查询失败。请修改查询语句重试'
     return result
 
-
 if __name__ == '__main__':
-    server.run()
+    server.run(transport='sse')
